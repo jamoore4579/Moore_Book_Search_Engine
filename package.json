@@ -22,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/jamoore4579/Moore_Book_Search_Engine/issues"
   },
-  "homepage": "https://github.com/jamoore4579/Moore_Book_Search_Engine#readme"
+  "homepage": "https://github.com/jamoore4579/Moore_Book_Search_Engine#readme",
+  "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
+    "apollo-server-express": "^2.15.0"
+  }
 }
