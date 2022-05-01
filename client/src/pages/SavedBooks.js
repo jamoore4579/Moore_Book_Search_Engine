@@ -9,7 +9,7 @@ import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
-  const { load, data } = useQuery(GET_ME);
+  const { loading, data } = useQuery(GET_ME);
   const [deleteBook] = useMutation(REMOVE_BOOK);
   const userData = data?.me || {};
 
@@ -36,7 +36,7 @@ const SavedBooks = () => {
           const data = cache.readQuery({ query: GET_ME });
           const userDataCache = data.me;
           const savedBooksCache = userDataCache.savedBooks;
-          const updateBookCache = savedBooksCache.filter((book) => book.bookId !== bookId);
+          const updatedBookCache = savedBooksCache.filter((book) => book.bookId !== bookId);
           data.me.savedBooks = updatedBookCache;
           cache.writeQuery({ query: GET_ME , data: {data: {...data.me.savedBooks}}})
         }
